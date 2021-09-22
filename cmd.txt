@@ -1,0 +1,245 @@
+
+/*******************Program 1 *******/
+
+void main()
+{
+	printf("Hello World\n");
+}
+
+
+/***********************************/
+
+
+set history filename cmd.txt
+set history save on
+run
+start
+continue
+start
+n
+n
+n
+start
+info frame
+l
+set listsize 2
+l
+l
+start
+l
+l
+l
+l
+disass main
+tui
+tui enable
+info b
+b 6
+continue
+start
+info b
+continue
+continue
+start
+start
+info b
+delete 5
+info b
+quit
+set history filename cmd.txt
+set history save on
+run
+start
+continue
+start
+s
+s
+s
+s
+n
+quit
+run
+
+
+
+
+/*****************program 2******************/
+
+#include<stdio.h>
+
+int add_array(int *, int);
+
+void main()
+{
+	int n,res;
+	printf("Enter the number of elements:\n");
+	scanf("%d",&n);
+	int a[n];
+	
+	printf("Enter the array elements:\n");
+	for(int i=0; i<n; i++)
+		scanf("%d", &a[i]);
+
+	printf("Array Elements:\n");
+	for(int i=0; i<n; i++)
+		printf("%d ", a[i]);
+
+	res=add_array(a, n);
+	printf("\nAddition:%d\n",res);
+}
+
+int add_array(int *a, int n)
+{
+	int i, sum;
+	for(i=0,sum=0; i<n; i++)
+		sum=sum+a[i];
+	return sum;
+}
+
+/*********************************************/
+
+
+set history filename cmd.txt
+set history save on
+run
+start 
+continue
+start
+l
+l
+l
+l
+l
+set listsize 5
+l
+start
+l
+l
+l
+l
+l
+l
+l
+l
+tui enable
+start
+n
+n
+n
+n
+n
+5
+n
+n
+n
+n
+print n
+print a[0]
+print a[1]
+b 21
+b 29
+break 22
+info break
+disable b 7
+info b
+enable b 7
+info b
+whatis n
+whatis a
+whatis add
+whatis add_array
+tui disable
+tui disable
+tui enable
+display i
+n
+n
+n
+n
+n
+n
+n
+reverse-next
+s
+n
+info frame
+up
+n
+down
+up
+down
+n
+n
+display sum
+display i
+watch sum
+info b
+n
+c
+c
+n
+n
+quit
+/***************************************/
+
+/**************** Try 2************/
+set history filename cmd.txt
+set history save on
+start
+n
+display n
+display res
+whatis n
+info b
+i b
+set var n = 2
+display n
+set var a = 3 4
+set var a[0] = 3
+display a[0]
+display a[1]
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+b 21
+b 29
+b 22
+info b
+disable 4
+i b
+enable 4
+n
+c
+s
+whatis add_array
+i f
+watch sum
+watch i
+c
+n
+c
+c
+c
+c
+c
+i b
+delete 3
+i b
+down
+up
+n
+i f
+n
+i b
+delete
+i b
+quit
+
+/**************************************/
